@@ -1,0 +1,20 @@
+{
+  "name": "ratemynjitprof",
+  "version": "0.0.1",
+  "description": "building chrome extension for NJIT students",
+  "scripts": {
+    "build": "npx webpack && npx tailwindcss -i ./src/styles.css -o ./dist/styles.css",
+    "prod": "npm run build && npm run zip && npm run move-zip",
+    "zip": "zip -r RateMyNJITProfessors.zip ./ -x 'node_modules/*' -x 'prod/*' -x '.git/*' -x 'package-lock.json'",
+    "move-zip": "rm -rf ./prod && mkdir -p ./prod/ && mv RateMyNJITProfessors.zip ./prod/ && unzip ./prod/RateMyNJITProfessors.zip -d ./prod/RateMyNJITProfessors && rm ./prod/RateMyNJITProfessors.zip"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "babel-loader": "^9.1.3",
+    "tailwindcss": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
