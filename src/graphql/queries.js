@@ -1,23 +1,30 @@
 const GET_PROFESSOR = `
-query ($id: ID!) {
+query TeacherRatingsPageQuery($id: ID!) {
     node(id: $id) {
         ... on Teacher {
             id
-            department
             legacyId
             firstName
             lastName
-            avgRating
+            department
             numRatings
-            avgDifficulty
+            avgRating
             wouldTakeAgainPercent
+            avgDifficulty
+            ratings(first: 20) {
+                edges {
+					node {
+						comment
+					}
+				}
+            }
         }
     }
 }
 `;
 
 const GET_PROFESSOR_ID = `
-query ($query: TeacherSearchQuery!) {
+query TeacherSearchResultsPageQuery($query: TeacherSearchQuery!) {
     newSearch {
         teachers(query: $query) {
             edges {

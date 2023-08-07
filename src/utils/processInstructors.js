@@ -9,7 +9,7 @@ const processInstructors = (section) => {
 
 	const instructors = Array.from(section.querySelectorAll('a.email')).map(
 		(instructor) => {
-			return instructor.textContent;
+			return instructor.textContent.replace(/\(.*?\)/, '');
 		}
 	);
 

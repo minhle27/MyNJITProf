@@ -1,4 +1,4 @@
-const processInstructors = require('./helpers/processInstructors');
+const processInstructors = require('./utils/processInstructors');
 
 const manipulate = () => {
 	// Adjusting the instructor column to fit rating information
