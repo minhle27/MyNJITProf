@@ -37,4 +37,7 @@ query TeacherSearchResultsPageQuery($query: TeacherSearchQuery!) {
 }
 `;
 
-module.exports = { GET_PROFESSOR, GET_PROFESSOR_ID };
+export default {
+	GET_PROFESSOR,
+	GET_PROFESSOR_ID
+};

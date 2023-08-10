@@ -1,14 +1,14 @@
-const processInstructors = require('./utils/processInstructors');
+import processInstructors from './utils/processInstructors';
 
 const manipulate = () => {
 	// Adjusting the instructor column to fit rating information
 	const thElement = document.querySelector('.instructor-col');
-	thElement.style.width = '300px';
+	if (thElement) thElement.style.width = '300px';
 
 	// eslint-disable-next-line no-unused-vars
 	const callback = (mutationList, observer) => {
 		// only execute the call back if changes in the DOM have effect on instructor column
-		//if (document.getElementById('profwithrating')) return;
+		// if (document.getElementsByClassName('profwithrating')) return;
 
 		const sections = Array.from(document.querySelectorAll('[data-property*="instructor"]'));
 		// process instructors of each section
